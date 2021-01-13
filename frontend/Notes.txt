@@ -1,0 +1,11 @@
+Angular CLI (Command Line Interface) => build framework
+npm => node package manager => like Maven for Java
+Node.js => back-end JavaScript runtime environment that executes JavaScript code outside of a web browser
+ng lint => checks quality of code , coding standards
+ng serve => local application server
+ng => stands for aNGular
+ng build => dist folder like target in a maven java app
+tests are called specifications
+Karma => test runner
+Jasmine => testing framework unit testing
+Protractor => runs e2e end to end tests uses Selenium
