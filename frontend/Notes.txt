@@ -5,7 +5,51 @@ ng lint => checks quality of code , coding standards
 ng serve => local application server
 ng => stands for aNGular
 ng build => dist folder like target in a maven java app
+
 tests are called specifications
 Karma => test runner
 Jasmine => testing framework unit testing
 Protractor => runs e2e end to end tests uses Selenium
+
+Component => is made out of <html> <css> and <js>
+Decorator => very similar to Java's Annotation
+We mark Components with @Component
+    Component Decorator attributes:
+        selector => name of the component
+        templateUrl => url of the html template
+        styleUrls => urls of the style file i.e .css
+        Attributes are wrapped in an object {key:value, key:value}
+
+{{name}} => data binding | interpolation
+
+ng generate component <name> => ng will add "component" at the end of the name
+    it will create a new folder in src/app , generate html,css,spec and component
+    files it will also add the new component to the list of components
+    in the app.module.ts file @NgModule
+Every Angular Component has to be associated with an Angular Module (@NgModule)
+
+importing classes
+import {name} from 'relative path to file containing the class'
+i.e import { AppComponent } from '../app.component' => no extension o file name
+
+Module is a collection of basic building blocks like Components, Directives or Services
+
+Class declaration:
+export class SomeClass implements OnInit
+
+export => make the class available outside of the module
+    kind of like a public access modifier in Java
+implements is a TypeScript feature
+
+We declare type after : i.e message : string = 'some text'
+We declare a constructor by creating a method constructor() not the name of the class
+
+Event binding => <button (click) = handleLogin()>
+click => name of the event
+handleLogin() => method to execute when event is triggered
+
+In JS to access member variables we have use this.variable it's not optional like in Java
+[()] => banana in a box
+Interpolation will get us a value from the component value={{username}}
+To have the value read and write to the component we use
+    [(ngModel)]="username" => two way data binding -> angular directive
