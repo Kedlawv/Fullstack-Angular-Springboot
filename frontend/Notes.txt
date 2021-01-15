@@ -53,3 +53,39 @@ In JS to access member variables we have use this.variable it's not optional lik
 Interpolation will get us a value from the component value={{username}}
 To have the value read and write to the component we use
     [(ngModel)]="username" => two way data binding -> angular directive
+
+<small *ngIf="invalidLogin"> ng attribute => renders html element if true
+
+Routing => we set up all the routing paths in the app-routing.module.ts as an array
+    <router-outlet></router-outlet> => html tag to show contents of the router path
+
+{path: '**', component: ErrorComponent} => '**' means any other path
+    ! The order is important ** error route needs to be last
+
+Set intellij to always use single quotes in generated code :
+    Setting > Cody Style > TypeScript > Punctuation
+
+Dependency Injection => is build-in in Angular
+    constructor(router:Router) => when we declare a variable in the constructor
+    Angular will inject the component & we also need an import
+    Whenever we pass an argument to the constructor it will be available as
+    a member of the class
+
+Path with a parameter:
+    We declare parameter in the app-routing.module.ts
+        {path: 'welcome/:name', component: WelcomeComponent}
+    We pass the parameter to the navigate method
+        this.router.navigate(['welcome', this.username])
+    We read the parameter by injecting ActivatedRoute on the destination component
+        constructor(private route: ActivatedRoute)
+    and accessing it from the now member variable of the injected ActivatedRoute
+        this.name = this.route.snapshot.params.name
+    To interpolate it in to the view we assign it to the local variable
+
+<a routerLink="/todos">here</a> => anchor tags referencing other pages/components
+    withing Angular app need to use routerLink. There is no todos.html only a
+    component.
+
+{{targetDate | date}} <| date> is a simple function that converts one value into another
+    in this case it formats a date according to local values
+{{targetDate | date | uppercase}} pipes are used inside template expressions
