@@ -84,8 +84,23 @@ Path with a parameter:
 
 <a routerLink="/todos">here</a> => anchor tags referencing other pages/components
     withing Angular app need to use routerLink. There is no todos.html only a
-    component.
+    component. If we use href the whole page will reload.
 
 {{targetDate | date}} <| date> is a simple function that converts one value into another
     in this case it formats a date according to local values
 {{targetDate | date | uppercase}} pipes are used inside template expressions
+
+Angular Application -> Angular Modules @ngModel -> Angular Components @Component
+Component ->  Template .html & Style .css & Code .ts
+
+To use an external method call in the component.html component we need to first inject the class
+    containing the method in to the constructor of the corresponding component.ts file
+    then we refer to the method in the ng directive by String -> AAAAaaaaaaa
+    We can also negate with ! also in the string. Why not using interpolation ?
+
+Important gotcha! ngOnInit() is called only once at the initialization of the component
+
+intelliJ right Click -> Find Usages | Alt+F7
+
+Angular Service => just a .ts file -> Singleton -> used to organize and share business
+    logic, models or data with different Angular components
