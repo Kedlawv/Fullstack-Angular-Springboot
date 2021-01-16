@@ -110,3 +110,15 @@ RouteGuardService => implements CanActivate
     canActivate takes an array as argument => we can have multiple RouteGuards
     {path: 'welcome/:name', component: WelcomeComponent, canActivate: [RouteGuardService]}
 
+Web Service => application that provides service that other applications can use
+    program to program, not platform dependant
+W3C Definition :
+    Software system designed to support interoperable machine-to-machine
+    interaction over a network.
+
+Web App => usually the end user is a human and the program has a GUI
+
+Service Definition is a contract between service provider and service consumer
+    Req/Res format && structure && location -> endpoint
+
+Transport => the means of communication, mechanism i.e HTTP or MQ
