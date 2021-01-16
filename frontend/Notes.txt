@@ -104,3 +104,9 @@ intelliJ right Click -> Find Usages | Alt+F7
 
 Angular Service => just a .ts file -> Singleton -> used to organize and share business
     logic, models or data with different Angular components
+
+RouteGuardService => implements CanActivate
+    In the app-routing.module we add a property canActivate passing in the class.
+    canActivate takes an array as argument => we can have multiple RouteGuards
+    {path: 'welcome/:name', component: WelcomeComponent, canActivate: [RouteGuardService]}
+
