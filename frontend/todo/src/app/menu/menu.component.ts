@@ -10,12 +10,11 @@ export class MenuComponent implements OnInit {
 
   // isUserLoggedIn = false;
 
-  constructor(private hardcodedAuthenticationService: HardcodedAuthenticationService) {
+  constructor(public hardcodedAuthenticationService: HardcodedAuthenticationService) {
   }
 
   ngOnInit(): void {
     // const isUserLoggedIn = this.hardcodedAuthenticationService.isUserLoggedIn();
     // this doesn't work because ngOnInit is called only once on component init
   }
-
 }

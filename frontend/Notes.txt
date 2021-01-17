@@ -122,3 +122,28 @@ Service Definition is a contract between service provider and service consumer
     Req/Res format && structure && location -> endpoint
 
 Transport => the means of communication, mechanism i.e HTTP or MQ
+
+Consuming a Rest Resource:
+    Inject HttpClient in to the Service class
+    import {HttpClientModule} from '@angular/common/http'; => app.module.ts
+    We call the appropriate method on HttpClient
+        this.http.get('http://localhost:8080/hello-world-bean');
+    Observable is returned.
+    We need to call the subscribe method on the Observable
+        to execute the request.
+
+Browser Error :
+XMLHttpRequest cannot load localhost:4201/ticker. Cross origin requests
+    are only supported for protocol schemes: http, data, chrome, chrome-extension,
+    https.
+    => most likely missing protocol in the ULR i.e http://
+
+Browser Error:
+Access to XMLHttpRequest at 'http://localhost:8080/hello-world0bean'
+    from origin 'http://localhost:4200' has been blocked by CORS policy:
+    No 'Access-Control-Allow-Origin' header is present on the requested resource.
+    => double check your request URL for typos!
+
+Empty strings are evaluated as false in Angular
+    *ngIf="welcomeMessageFromService"> where welcomeMessage is a field of type
+        string initialized to ''
