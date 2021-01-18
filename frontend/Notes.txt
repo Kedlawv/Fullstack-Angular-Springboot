@@ -147,3 +147,9 @@ Access to XMLHttpRequest at 'http://localhost:8080/hello-world0bean'
 Empty strings are evaluated as false in Angular
     *ngIf="welcomeMessageFromService"> where welcomeMessage is a field of type
         string initialized to ''
+
+To request a resource with a parameter we can append an argument to the request URL by surrounding the URL
+    by back tick character instead of a single quote and using the dollar sign i.e:
+    executeHelloWorldBeanServiceWithPathVariable(name: string): Observable<HelloWorldBean> {
+        return this.http.get<HelloWorldBean>(`http://localhost:8080/hello-bean-name/${name}`);
+      }
