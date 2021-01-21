@@ -53,6 +53,10 @@ In JS to access member variables we have use this.variable it's not optional lik
 Interpolation will get us a value from the component value={{username}}
 To have the value read and write to the component we use
     [(ngModel)]="username" => two way data binding -> angular directive
+    It is a shortcut for two things :
+    [ngModel] = 'object.field' => property binding
+    (ngModelChange) = 'object.field = $event' => event binding
+        when the value changes , update the value
 
 <small *ngIf="invalidLogin"> ng attribute => renders html element if true
 
