@@ -172,3 +172,10 @@ REST | ResponseEntity => use to return a status for the Resource request i.e
 Restlet aka Talend => Rest Api tester, very similar to Postman
     but works as chrome plugin
 
+For the POST mapping (Creating a new resource) we return a URL of the newly
+    created resource.
+    We use a helper class ServletUriComponentsBuilder i.e :
+         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                  .buildAndExpand(todoSaved.getId()).toUri();
+
+
