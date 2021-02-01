@@ -178,4 +178,10 @@ For the POST mapping (Creating a new resource) we return a URL of the newly
          URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                   .buildAndExpand(todoSaved.getId()).toUri();
 
+Forms with Angular => we mark the button calling the method as type="submit" and instead of assigning a (click)
+    event to the button we assign a (ngSubmit) event to the <form> tag
+    i.e <form (ngSubmit)="saveTodo()"> && <button type="submit"> | <button (click)="saveTodo()>
+
+#name => template variable
+
 
