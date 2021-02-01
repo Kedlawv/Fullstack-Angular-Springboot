@@ -187,10 +187,20 @@ Forms with Angular => we mark the button calling the method as type="submit" and
 BackEnd Spring Security
     Form based Authentication => Session cookie && Creates a session on the backend
     Basic Authentication => Basic Authorization Header
+        basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
+        window.btoa encodes a string in base-64 | atob() decodes
 
 Options preflight request => when authentication is added to a request it will be preceded by a Options type request
     to check if the right permissions are in place
 
 CSRF => Cross Site Request Forgery
+
+Angular Intercepting Outgoing Http Request:
+     Service method needs to implement -> HttpInterceptor from '@angular/common/http'
+     We implement the intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> method
+     We make appropriate changes to the Request object (which is immutable, we need to use the clone())
+     and we pass the request to the next interceptor or backend using next.handle()
+     Add a provider in the app.module.ts. We pass an object:
+        {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi: true}
 
 
