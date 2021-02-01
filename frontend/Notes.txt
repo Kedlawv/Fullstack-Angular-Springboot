@@ -188,4 +188,9 @@ BackEnd Spring Security
     Form based Authentication => Session cookie && Creates a session on the backend
     Basic Authentication => Basic Authorization Header
 
+Options preflight request => when authentication is added to a request it will be preceded by a Options type request
+    to check if the right permissions are in place
+
+CSRF => Cross Site Request Forgery
+
 
