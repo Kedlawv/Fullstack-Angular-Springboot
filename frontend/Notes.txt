@@ -184,4 +184,8 @@ Forms with Angular => we mark the button calling the method as type="submit" and
 
 #name => template variable
 
+BackEnd Spring Security
+    Form based Authentication => Session cookie && Creates a session on the backend
+    Basic Authentication => Basic Authorization Header
+
 
