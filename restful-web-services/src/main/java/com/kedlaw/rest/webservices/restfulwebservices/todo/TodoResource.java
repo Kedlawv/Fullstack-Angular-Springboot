@@ -1,5 +1,6 @@
 package com.kedlaw.rest.webservices.restfulwebservices.todo;
 
+import com.sun.org.apache.bcel.internal.generic.IFNULL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +23,12 @@ public class TodoResource {
     }
 
     @GetMapping("/users/{username}/todos/{id}")
-    public Todo getTodoById(@PathVariable String username, @PathVariable long id) {
-        return todoHardcodedService.findById(id);
+    public ResponseEntity<Todo> getTodoById(@PathVariable String username, @PathVariable long id) {
+        Todo todo = todoHardcodedService.findById(id);
+        if (todo == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return new ResponseEntity<Todo>(todo, HttpStatus.OK);
     }
 
     @DeleteMapping("/users/{username}/todos/{id}")

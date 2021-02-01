@@ -32,4 +32,9 @@ export class TodoDataService {
       , todo);
   }
 
+  createTodo(username: string, todo: Todo): Observable<any> {
+    return this.http.post(
+      `http://localhost:8080/users/${username}/todos`
+      , todo);
+  }
 }
