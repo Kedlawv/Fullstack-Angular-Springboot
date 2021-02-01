@@ -10,11 +10,12 @@ import {Todo} from '../list-todos/list-todos.component';
 })
 export class TodoComponent implements OnInit {
   private id = 0;
-  private todo: Todo = new Todo(0, 'init', false, new Date());
+  public todo: Todo = new Todo(0, 'init', false, new Date());
 
   constructor(
     private todoService: TodoDataService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
   }
 
@@ -25,4 +26,11 @@ export class TodoComponent implements OnInit {
     );
   }
 
+  saveTodo(): void {
+    this.todoService.updateTodo('kedlaw', this.id, this.todo)
+      .subscribe(
+        data => console.log(data)
+      );
+    this.router.navigate(['todos']);
+  }
 }
