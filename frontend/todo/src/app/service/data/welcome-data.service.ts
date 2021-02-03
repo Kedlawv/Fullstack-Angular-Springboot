@@ -18,19 +18,13 @@ export class WelcomeDataService {
   }
 
   executeHelloWorldBeanService(): Observable<HelloWorldBean> {
-    return this.http.get<HelloWorldBean>('http://localhost:8080/hello-world-bean');
+    return this.http.get<HelloWorldBean>('${API_URL}/hello-world-bean');
     // console.log('executeHelloWorldBeanService()');
   }
 
   executeHelloWorldBeanServiceWithPathVariable(name: string): Observable<HelloWorldBean> {
-    const basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
-    const header = new HttpHeaders({
-      Authorization: basicAuthHeaderString
-    });
 
-    return this.http.get<HelloWorldBean>(`http://localhost:8080/hello-bean-name/${name}`
-      , {headers: header}
-    );
+    return this.http.get<HelloWorldBean>(`${API_URL}/hello-bean-name/${name}`);
   }
 
   createBasicAuthenticationHttpHeader(): string {
