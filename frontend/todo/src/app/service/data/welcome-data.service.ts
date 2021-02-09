@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {API_URL} from '../../app.constants';
 
 export class HelloWorldBean {
   constructor(public message: string) {
@@ -18,7 +19,7 @@ export class WelcomeDataService {
   }
 
   executeHelloWorldBeanService(): Observable<HelloWorldBean> {
-    return this.http.get<HelloWorldBean>('${API_URL}/hello-world-bean');
+    return this.http.get<HelloWorldBean>(`${API_URL}/hello-world-bean`);
     // console.log('executeHelloWorldBeanService()');
   }
 

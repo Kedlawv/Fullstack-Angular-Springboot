@@ -203,4 +203,14 @@ Angular Intercepting Outgoing Http Request:
      Add a provider in the app.module.ts. We pass an object:
         {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi: true}
 
+JWT => Jason Web Token
+
+H2 => As of SpringBoot 2.3.4 DB name is no longer default, it is printed to the console
+    i.e => jdbc:h2:mem:615f9533-af85-4129-874d-d85fb783f0a1
+    we can set a permanent address of the DB in application.properties:
+       => spring.datasource.url=jdbc:h2:mem:testdb
+
+To solve the "localhost refused to connect" problem with H2 and Spring Security
+    add to http security configuration :
+        http.headers().frameOptions().sameOrigin();
 
